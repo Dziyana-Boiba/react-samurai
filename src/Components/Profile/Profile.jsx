@@ -1,9 +1,9 @@
-import Posts from './Posts'
+import Posts from './Posts/Posts'
 import st from './Profile.module.css'
 
 const Profile = () => {
     return (
-        <div className={st.content}>
+        <div className={st.profile}>
             <div>
                 <img 
                     

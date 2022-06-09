@@ -3,6 +3,9 @@
 .navbar {
   grid-area: n;
   background-color: #C70830;
+  
 }
 
-
+.navbar ul{
+    list-style: none;
+  }
