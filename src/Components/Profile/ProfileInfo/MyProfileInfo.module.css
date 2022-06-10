@@ -1,0 +1,13 @@
+.profileInfo img {
+  width: 150px;
+}
+
+.profileInfo {
+  display: flex;
+  padding: 10px;
+}
+.privetInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}

@@ -17,7 +17,7 @@ function App() {
         <div className='contentApp'>
           <Routes path="/">
             <Route path="profile" element={<Profile />}/>
-            <Route path="dialogs" element={<Dialogs />}/>
+            <Route path="dialogs/*" element={<Dialogs />}/>
           </Routes>
           
           
