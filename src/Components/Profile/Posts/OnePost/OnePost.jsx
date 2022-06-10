@@ -3,7 +3,7 @@ import st from './OnePost.module.css'
 const OnePost = (props) => {
     return (
         <div className={st.onePost}>
-            <img src={props.img}></img>
+            <img src={props.img} alt=""></img>
             <p>{props.message}</p>
             <span>like: {props.like}</span>
             
