@@ -13,7 +13,7 @@ const Profile = (props) => {
                     className={st.img}></img>
             </div>
             <MyProfileInfo />
-            <Posts posts={props.posts}/>
+            <Posts posts={props.state.posts}/>
         </div>
     )
 }
