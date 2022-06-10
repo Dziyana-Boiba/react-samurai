@@ -4,11 +4,3 @@
   display: grid;
   grid-template-columns: 2fr 10fr;
 }
-
-.dialogs {
-  padding: 10px;
-}
-
-.active{
-  color:crimson;
-}

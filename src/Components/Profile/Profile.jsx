@@ -1,8 +1,9 @@
+import React from 'react'
 import MyProfileInfo from './ProfileInfo/MyProfileInfo'
 import Posts from './Posts/Posts'
 import st from './Profile.module.css'
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={st.profile}>
             <div>
@@ -12,7 +13,7 @@ const Profile = () => {
                     className={st.img}></img>
             </div>
             <MyProfileInfo />
-            <Posts />
+            <Posts posts={props.posts}/>
         </div>
     )
 }
