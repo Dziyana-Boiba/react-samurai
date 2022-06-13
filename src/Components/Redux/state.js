@@ -1,3 +1,5 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
 
  
 let store = {
@@ -33,19 +35,20 @@ let store = {
         },
         dialogsPage: {
             dialogs: [
-            {id: 1, name: "Diana"},
-            {id: 2, name: "Di"}, 
-            {id: 3, name: "Anna"}, 
-            {id: 4, name: "Yuliana"}  
+                {id: 1, name: "Diana"},
+                {id: 2, name: "Di"}, 
+                {id: 3, name: "Anna"}, 
+                {id: 4, name: "Yuliana"}  
           
             ],
             messages: [
-            {id: 1, message: "hi"},
-            {id: 2, message: "How are you?"}, 
-            {id: 3, message: "Anna"}, 
-            {id: 4, message: "Yuliana"}  
-          
-            ]
+                {id: 1, message: "hi"},
+                {id: 2, message: "How are you?"}, 
+                {id: 3, message: "Anna"}, 
+                {id: 4, message: "Yuliana"}  
+            
+            ],
+            newMessageText: ""
         }
     },
     getState() {
@@ -55,49 +58,22 @@ let store = {
         console.log("rerender");
     },
     
-    
     subscribe(observer) {
-        
         this._callSubscriber = observer;
     },
 
     dispatch(action) {
-        if (action.type === "ADD-POST"){
 
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                like: 0,
-                img: "https://static.vecteezy.com/system/resources/previews/005/432/320/non_2x/samurai-warrior-illustration-vector.jpg"
-              
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = "";
-            this._callSubscriber(this._state)
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
 
-        } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this.state)
-
-        }
+        this._callSubscriber(this._state);
     }
+    
 
 }
  
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-
-export const addPostActionCreator = () => ({type: ADD_POST})
 
 
-export const updateNewPostActionCreator = (text) => {
-    return (
-        {
-            type: UPDATE_NEW_POST_TEXT,
-            newText: text
-        }
-    )
-}
 
 export default store
