@@ -5,8 +5,9 @@ import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 import Footer from './Components/Footer/Footer';
-import Dialogs from './Components/Dialogs/Dialogs';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -16,11 +17,8 @@ function App(props) {
         <Navbar />
         <div className='contentApp'>
           <Routes path="/">
-            <Route path="profile" element={<Profile 
-                    profilePage={props.appState.profilePage} 
-                    dispatch={props.dispatch}
-                     />}/>
-            <Route path="dialogs/*" element={<Dialogs store={props.store} />}/>
+            <Route path="profile" element={<Profile store={props.store} />}/>
+            <Route path="dialogs/*" element={<DialogsContainer store={props.store} />}/>
           </Routes>
           
           
