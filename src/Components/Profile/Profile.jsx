@@ -1,6 +1,6 @@
 import React from 'react'
 import MyProfileInfo from './ProfileInfo/MyProfileInfo'
-import Posts from './Posts/Posts'
+
 import st from './Profile.module.css'
 import PostsContainer from './Posts/PostsContainer'
 
@@ -14,10 +14,7 @@ const Profile = (props) => {
                     className={st.img}></img>
             </div>
             <MyProfileInfo />
-            <PostsContainer
-                store={props.store} 
-                
-                />
+            <PostsContainer />
         </div>
     )
 }
