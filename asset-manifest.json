@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-samurai/static/css/main.246d1826.css",
-    "main.js": "/react-samurai/static/js/main.df774fe8.js",
+    "main.css": "/react-samurai/static/css/main.7d204ddb.css",
+    "main.js": "/react-samurai/static/js/main.9844ab7b.js",
     "static/js/787.659a68c0.chunk.js": "/react-samurai/static/js/787.659a68c0.chunk.js",
     "index.html": "/react-samurai/index.html",
-    "main.246d1826.css.map": "/react-samurai/static/css/main.246d1826.css.map",
-    "main.df774fe8.js.map": "/react-samurai/static/js/main.df774fe8.js.map",
+    "main.7d204ddb.css.map": "/react-samurai/static/css/main.7d204ddb.css.map",
+    "main.9844ab7b.js.map": "/react-samurai/static/js/main.9844ab7b.js.map",
     "787.659a68c0.chunk.js.map": "/react-samurai/static/js/787.659a68c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.246d1826.css",
-    "static/js/main.df774fe8.js"
+    "static/css/main.7d204ddb.css",
+    "static/js/main.9844ab7b.js"
   ]
 }
