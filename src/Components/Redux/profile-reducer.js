@@ -37,18 +37,26 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                newPostText: action.newText
+            };
+            
         case ADD_POST:
+           
             let newPost = {
                 id: 5,
                 message: state.newPostText,
                 like: 0,
                 img: "https://static.vecteezy.com/system/resources/previews/005/432/320/non_2x/samurai-warrior-illustration-vector.jpg"
             }
-            state.posts.push(newPost);
-            state.newPostText = "";
-            return state;
+                        
+            return {
+                ...state,
+                newPostText: "",
+                posts: [...state.posts, newPost]
+
+            };
         default:
             return state;
 
