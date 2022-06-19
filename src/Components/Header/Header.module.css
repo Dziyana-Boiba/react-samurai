@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 
 .header {
   grid-area: h;
-  background-color: #C70830;
+  background-color: #af1e23;
 
 }
 
@@ -12,8 +23,20 @@
 }
 
 .header span {
-  font-size: 50px;
+  font-size: 80px;
   
+  font-family: 'Fascinate', cursive;
+  font-family: 'Fascinate Inline', cursive;
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Monoton', cursive;
+  font-family: 'Rock Salt', cursive;
+  font-family: 'Barriecito', cursive;
+  font-family: 'IM Fell English SC', serif;
+  font-family: 'Cabin Sketch', cursive;
+  font-family: 'Rye', cursive;
+  font-family: 'Monofett', cursive;
+  font-family: 'Rubik Glitch', cursive;
+  font-family: 'Rubik Wet Paint', cursive;
 }
 
 

@@ -9,6 +9,8 @@ import Footer from './Components/Footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
 
+import UsersContainer from './Components/Users/UsersContainer';
+
 function App(props) {
   return (
     <BrowserRouter>
@@ -19,6 +21,7 @@ function App(props) {
           <Routes path="/">
             <Route path="profile" element={<Profile  />}/>
             <Route path="dialogs/*" element={<DialogsContainer  />}/>
+            <Route path="users" element={<UsersContainer />}/>
           </Routes>
           
           
