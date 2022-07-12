@@ -3,6 +3,7 @@ import MyProfileInfo from './ProfileInfo/MyProfileInfo'
 
 import st from './Profile.module.css'
 import PostsContainer from './Posts/PostsContainer'
+import UserProfileInfo from './ProfileInfo/UserProfileInfo'
 
 const Profile = (props) => {
     return (
@@ -14,6 +15,7 @@ const Profile = (props) => {
                     className={st.img}></img>
             </div>
             <MyProfileInfo />
+            <UserProfileInfo profile={props.profile}/>
             <PostsContainer />
         </div>
     )

@@ -1,6 +1,7 @@
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const SET_USER_PROFILE = "SET-USER-PROFILE"
 
 
 let initialState =  {
@@ -30,7 +31,8 @@ let initialState =  {
         like: 1,
         img: "https://static.vecteezy.com/system/resources/previews/005/432/320/non_2x/samurai-warrior-illustration-vector.jpg"
     }
-    ]
+    ],
+    profile: null
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -57,6 +59,10 @@ const profileReducer = (state = initialState, action) => {
                 posts: [...state.posts, newPost]
 
             };
+        
+        case SET_USER_PROFILE:
+            return {...state, profile: action.profile}
+
         default:
             return state;
 
@@ -76,5 +82,7 @@ export const updateNewPostActionCreator = (text) => {
         }
     )
 }
+
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
 export default profileReducer

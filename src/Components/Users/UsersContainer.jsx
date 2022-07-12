@@ -1,6 +1,5 @@
 import * as axios from "axios"
 import React from "react"
-
 import Users from "./Users"
 import { connect } from "react-redux"
 import { followOnClick, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollowOnClick } from "../Redux/users-reducer"
