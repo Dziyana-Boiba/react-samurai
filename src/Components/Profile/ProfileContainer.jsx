@@ -1,7 +1,7 @@
 import * as axios from "axios"
 import React from 'react'
 import { connect } from "react-redux"
-import {setUserProfile} from "../Redux/profile-reducer"
+import {setUserProfile} from "../../Redux/profile-reducer"
 import Profile from './Profile'
 import { useParams } from "react-router-dom"
 

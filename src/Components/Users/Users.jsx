@@ -4,6 +4,7 @@ import st from "./Users.module.css"
 import * as axios from "axios"
 import userPhoto from "../../assets/img/samurai-avatar.jpg"
 import { NavLink } from "react-router-dom";
+import { followAPI } from "../../api/api";
 
 const Users = (props) => {
     
@@ -45,38 +46,27 @@ const Users = (props) => {
                         </div>
                         <div>
                             {u.followed 
-                                ? <button onClick={() => {
-                                    
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "79ef3aaf-6023-464f-b953-a94776b4157b"
-                                        }
-                                    })
-        
-                                        .then (response => {
-                                            if(response.data.resultCode === 0){
+                                ? <button disabled={props.followingProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id) 
+                                   followAPI.getFollow(u.id)         
+                                        .then (data => {
+                                            if(data.resultCode === 0){
                                                props.unfollowOnClick(u.id)
                                             }
-                                           
+                                            props.toggleFollowingProgress(false, u.id)
                                         })
                                     
                                     } }>Unfollow</button> 
 
-                                : <button onClick={() => {
-                                    
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "79ef3aaf-6023-464f-b953-a94776b4157b"
-                                        }
-                                    })
+                                : <button disabled={props.followingProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id)
+                                    followAPI.getUnFollow(u.id)
         
-                                        .then (response => {
-                                            if(response.data.resultCode === 0){
+                                        .then (data => {
+                                            if(data.resultCode === 0){
                                                 props.followOnClick(u.id)
                                             }
-                                           
+                                            props.toggleFollowingProgress(false, u.id)
                                         })
                                     
                                     
