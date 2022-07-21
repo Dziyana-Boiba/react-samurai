@@ -20,7 +20,7 @@ const Users = (props) => {
         let slicedPages = pages.slice(curPageFirst, curPageLast);
 
         return (
-        <div>
+        <div className={st.users}>
             {/*<button onClick={this.getUsers}>Get Users</button>*/}
             <div>
             <span>{pages[0]}{"< "}  </span>
@@ -53,7 +53,7 @@ const Users = (props) => {
                                             if(data.resultCode === 0){
                                                props.unfollowOnClick(u.id)
                                             }
-                                            props.toggleFollowingProgress(false, u.id)
+                                            props.toggleFollowingProgress(false, u.id )
                                         })
                                     
                                     } }>Unfollow</button> 

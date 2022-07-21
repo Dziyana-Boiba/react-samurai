@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './App.css';
+
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -9,13 +10,15 @@ import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 
+
 function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
+        
         <HeaderContainer />
         <Navbar />
-        <div className='contentApp'>
+        <div className="contentApp">
           <Routes path="/">
             <Route path="profile" element={<ProfileContainer  />}/>
             <Route path="profile/:userId" element={<ProfileContainer  />}/>

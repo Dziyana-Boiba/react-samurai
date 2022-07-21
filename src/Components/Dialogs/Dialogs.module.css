@@ -1,5 +1,6 @@
 
 .dialogs {
+  height: 100vh;
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 10fr;

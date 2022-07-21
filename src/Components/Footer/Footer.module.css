@@ -1,8 +1,13 @@
 
 
 .footer {
-  grid-area: f;
-  background-color: #C70830;
+  
+  background-color:  #22242A;
+  height: 25px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
 }
 
 

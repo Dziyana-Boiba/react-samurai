@@ -1,14 +1,21 @@
+@import url("./Components/Navbar/Navbar.css");
+
 .App {
-  display: grid;
-  grid-template-areas: 
-    "h h"
-    "n c"
-    "f f";
-  grid-template-columns: 2fr 10fr;
-  grid-template-rows: 90px 1fr;
+  min-height: 100vh;
+  
 }
 
 .contentApp {
-  grid-area: c;
+  
+  margin-left: 200px;
+  padding-top: 50px;
   background-color: #fff;
+  height: 100vh;
+  transition: margin-left 0.4s;
 }
+
+
+input[type="checkbox"]:checked ~ .contentApp {
+  left: -120px;
+}
+

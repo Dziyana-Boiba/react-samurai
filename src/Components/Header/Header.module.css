@@ -1,40 +1,31 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
-
 .header {
-  grid-area: h;
-  background-color: #af1e23;
-  padding: 10px 20px;
-  
+  padding: 0px 30px;
+  background-color: #22242A;
+  width: 100%;
+  position: fixed;
+  height: 50px;
 }
 
 .logo {
-  width: 70px;
-  margin: 5px;
+ 
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
   border-radius: 40px;
 }
 
-.name {
-  font-size: 70px;
-  
- 
-  font-family: 'Rubik Wet Paint', cursive;
-  font-family: 'IM Fell English SC', serif;
+
+.name span {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0px;
   font-family: 'Rock Salt', cursive;
-  font-family: 'Fascinate Inline', cursive;
-  
- 
-  
-  
+  font-weight: 900;  
+  color: #af1e23;
+  text-shadow: 2px 2px 5px white, 2px 2px 5px gray;
 }
 
 
@@ -45,4 +36,25 @@
 
 .loginBlock a {
   color: white;
+}
+
+.btn{
+  text-decoration: none;
+  padding: 5px;
+  float: right;
+  margin-top: -36px;
+  border: none;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  background-color: #af1e23;
+  transition: 0.4s;
+  transition-property: background;
+}
+
+.btn:hover{
+  background: #c42c31;
+  box-shadow: 2px 2px 5px white, 2px 2px 5px gray;
+  
 }
