@@ -1,7 +1,7 @@
 
 import React from "react"
 import st from "./Users.module.css"
-import * as axios from "axios"
+
 import userPhoto from "../../assets/img/samurai-avatar.jpg"
 import { NavLink } from "react-router-dom";
 import { followAPI } from "../../api/api";
