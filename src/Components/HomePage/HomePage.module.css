@@ -1,5 +1,8 @@
-.profile {
+.home {
   margin: auto;
   height: 100vh;
 }
 
+.img {
+  width: 1200px;
+}

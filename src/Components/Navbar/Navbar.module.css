@@ -10,7 +10,7 @@
   margin-top: 50px;
   padding-top: 20px;
   transition: left 0.4s;
-  
+  z-index: 2;
 }
 
 
@@ -73,7 +73,7 @@
 }
 
 /* Change the link color on hover */
-ul li a:hover {
+.navbar ul li a:hover {
   padding-left: 30px;
   background-color: #22242A;
   color: white;
@@ -97,9 +97,6 @@ ul li a:hover {
   transition: .4s;
 }
 
-.contentApp{
-  color: blue;
-}
 
 
 .icon:hover{
@@ -125,8 +122,6 @@ input[type="checkbox"]:checked ~ .navbar ul a{
 input[type="checkbox"]:checked ~ .navbar .profileImg {
   visibility: hidden; 
 }
-
-
 
 
 input[type="checkbox"]:checked ~ .navbar .icon{

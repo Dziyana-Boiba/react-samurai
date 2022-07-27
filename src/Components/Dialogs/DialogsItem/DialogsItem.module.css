@@ -5,4 +5,92 @@
 
 .active{
   color:crimson;
+  
+}
+
+.dialogItem{
+  display: flex;
+  border-bottom: 1px solid #fff;
+  width: 260px;
+  
+  padding: 10px 10px 10px 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.dialogItemActive{
+  display: flex;
+  border-bottom: 1px solid #fff;
+  width: 260px;
+  padding: 10px 10px 10px 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  background-color: #7D7F84;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.dialogItem:last-child{
+  border-bottom: none;
+}
+
+.avatar {
+  position: relative;
+  margin-right: 20px;
+}
+
+.avatar img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+ 
+}
+.userInfo .dialog{
+  margin: 0;
+  padding: 0;
+  color: #22242A;
+  font-weight: 600;
+  font-size: 18px;
+
+}
+
+.userInfo span{
+  margin: 0;
+  padding: 0;
+  color: #B1B2B5;
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+}
+
+.dialogItem:hover,
+.dialogItem.active{
+  background-color: #7D7F84;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.isOnline{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #ebe7fb;
+  z-index: 2;
+}
+
+.isOnlineTrue{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  bottom: 0;
+  right: 0;
+  background-color: #af1e23;
+  border-radius: 50%;
+  border: 1px solid #ebe7fb;
+  z-index: 2;
 }

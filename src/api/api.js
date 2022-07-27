@@ -17,28 +17,31 @@ export const usersAPI = {
             .then(response => {
                 return response.data;
             });
-}
-}
-
-
-export const followAPI = {
+    },
     getFollow(userId){
-        return instance.delete(`follow/${userId}`)
+        return instance.post(`follow/${userId}`)
             .then(response => {
                 return response.data;
             });
     },
     getUnFollow(userId){
-        return instance.post(`follow/${userId}`)
+        return instance.delete(`follow/${userId}`)
             .then(response => {
                 return response.data;
             });
+    },
+    getUserData(userId){
+        return instance.get(`profile/${userId}`)
+            .then( response => {
+                return response.data
+            })
     }
-};
+}
 
 
 
-export const myAPI = {
+
+export const authAPI = {
     getMyData(){
         return instance.get(`auth/me`)
             .then(response => {
@@ -46,6 +49,8 @@ export const myAPI = {
             });
 }
 }
+
+
 
 
 

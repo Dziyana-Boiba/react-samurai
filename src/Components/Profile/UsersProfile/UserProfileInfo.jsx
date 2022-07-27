@@ -1,5 +1,5 @@
 import Preloader from '../../common/Preloader/Preloader'
-import st from './MyProfileInfo.module.css'
+import st from './UserProfile.module.css'
 
 const UserProfileInfo = (props) => {
 
@@ -8,7 +8,7 @@ const UserProfileInfo = (props) => {
     }
 
     return (
-        <div className={st.profileInfo}>
+        <div className={st.userInfo}>
             
             
                 <img src={props.profile.photos.small} alt=""></img>

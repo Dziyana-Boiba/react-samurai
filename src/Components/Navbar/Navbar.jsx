@@ -1,57 +1,63 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
-import './../../App.css';
+import st from './Navbar.module.css';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faComments, faUserFriends, faAddressCard, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faComments, faUserFriends, faIdCardAlt, faChevronCircleLeft, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 
-const activeLink = ({isActive}) => isActive ? "active" : "item"
+const activeLink = ({isActive}) => isActive ? st.active : st.item
 
 
 const Navbar = () => {
     
     return (
         <div>
-            <input type="checkbox" id="check" className='checkNav'/>
-            <div className="navbar">
             
-            <div className="profileImg">
+            <div className={st.navbar}>
+                <input type="checkbox" id="check"/>
+            <div className={st.profileImg}>
             
                 <img 
                     alt=""
                     src="https://www.reviewofreligions.org/wp-content/uploads/2021/01/samurai-warrior-smalll-shutterstock_1345891196-1024x1024.jpeg"
-                    className="img"
+                    className={st.img}
                 ></img>
-                <p className="name">Shimazu</p>
+                <p className={st.name}>Shimazu</p>
             </div>
 
             <ul>
-                <li className="item">
+                <li className={st.item}>
+                    <NavLink to="/home" className={activeLink}>
+                        <FontAwesomeIcon icon={faLaptopCode} className={st.iconLink}/>
+                            <span>Home</span>
+                    </NavLink>
+                </li>
+                <li className={st.item}>
                     <NavLink to="/profile" className={activeLink}>
-                        <FontAwesomeIcon icon={faAddressCard} className="iconLink"/>
+                        <FontAwesomeIcon icon={faIdCardAlt} className={st.iconLink}/>
                             <span>My Profile</span>
                     </NavLink>
                 </li>
-                <li className="item">
+                <li className={st.item}>
                     <NavLink to="/dialogs" className={activeLink}> 
-                        <FontAwesomeIcon icon={faComments} className="iconLink"/>
+                        <FontAwesomeIcon icon={faComments} className={st.iconLink}/>
                             <span>Messages</span>
                     </NavLink>
                 </li>
-                <li className="item">
+                <li className={st.item}>
                     <NavLink to="/users" className={activeLink}>
-                        <FontAwesomeIcon icon={faUserFriends} className="iconLink"/>
+                        <FontAwesomeIcon icon={faUserFriends} className={st.iconLink}/>
                             <span>Users</span>
                     </NavLink>
                 </li>
                 
             </ul>
-            <div className="slider">
+            <div className={st.slider}>
                 
-                <label for="check">
-                    <FontAwesomeIcon icon={faChevronCircleLeft} className="icon"/>
+                <label for={st.check}>
+                    <FontAwesomeIcon icon={faChevronCircleLeft} className={st.icon}/>
                 </label>
                 
             </div>

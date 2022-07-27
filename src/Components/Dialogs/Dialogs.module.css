@@ -2,6 +2,75 @@
 .dialogs {
   height: 100vh;
   margin: auto;
+}
+
+.chatBox{
   display: grid;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 300px 1fr;
+  height: 100%;
+}
+
+.chatList{
+  grid-column: 1/2;
+  width: 300px;
+  height: 100%;
+  background-color: #E5E5E6;
+  border-right: 1px solid #B1B2B5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.chatContent{
+  grid-column: 2/3;
+  height: 100%;
+  background-color: #E5E5E6;
+}
+
+
+.chatList button{
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 220px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.chatList button:hover{
+  background-color: #af1e23;
+  color:#fff;
+  transform: scale(1.02);
+}
+
+.chatList button .icon{
+  padding-right: 15px;
+  
+  font-size: 20px;
+  
+  
+}
+
+.chatList button span{
+  border-left: 1px solid #E5E5E6;
+  padding-left: 15px;
+
+}
+
+.dialogItems{
+  margin-top: 30px;
+  overflow: auto;
+  max-height: calc(100vh - calc(100vh / 3));
 }

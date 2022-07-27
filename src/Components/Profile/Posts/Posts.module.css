@@ -1,3 +1,73 @@
+.posts{
+    padding: 20px;
+}
 
+.box{
+    width: 490px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
 
+}
 
+.image{
+    margin-right: 20px;
+    align-self: flex-start;
+}
+
+.img{
+    width: 50px;
+    
+}
+
+.box textarea{
+    width: 400px;
+    height: 100px;
+    padding: 5px 10px;
+    outline: none;
+    border: 2px solid #2F323A;
+    border-radius: 20px;
+    resize: none;
+    margin-bottom: 5px;
+}
+
+/*textarea:focus{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    bottom: -100%;
+    right: -40%;
+    background: #ddd;
+}
+
+textarea:focus ~ button{
+    bottom: 110px;
+    left: 310px;
+}*/
+.icon{
+    color: #2F323A;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+span{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.box .main button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border: none;
+    border-radius: 5px;
+    background-color: #af1e23;
+    float: right;
+    margin-right: 10px;
+}

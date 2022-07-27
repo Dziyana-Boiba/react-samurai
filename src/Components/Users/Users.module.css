@@ -1,10 +1,47 @@
+@import '~antd/dist/antd.css';
+
 .users{
     padding: 20px;
+    padding-bottom: 50px;
 }
 
+.userInfo{
+    
+    width: 500px;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.userName{
+    font-size: 20px;
+    font-weight: bold;
+}
 .img {
     width: 100px;
+    border-radius: 50px;
+    margin-right: 20px;
 }
+
+.usersList button{
+    margin-left: 35px;
+    padding: 5px;
+    border: none;
+    color: white;
+    background-color:  rgb(47, 50, 58);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+.usersList button:disabled{
+    background-color: rgba(47, 50, 58, 0.2);
+    cursor: none;
+}
+
 .classSelectPage{
     font-weight: bold;
 }

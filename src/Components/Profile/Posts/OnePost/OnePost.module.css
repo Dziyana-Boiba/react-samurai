@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400;500;600;700&display=swap');
 
 .onePost {
+  padding-top: 20px;
+}
+.avatar{
+  transform: scale(1.5);
+}
+
+.comment p{
+  padding-left: 10px;
+  color:  #2F323A;
+  font-family: 'Edu VIC WA NT Beginner', cursive;
+  font-weight: 700;
   font-size: 20px;
-  color: brown;
 }
-.onePost img{
-  width: 60px;
-  border-radius: 20px;
-}
+
+
