@@ -1,4 +1,7 @@
-Link to see app: [React Samurai](https://dziyana-boiba.github.io/react-samurai/)
+# Link to see app: 
+
+[React Samurai](https://dziyana-boiba.github.io/react-samurai/)
+
 
 
 # Getting Started with Create React App
