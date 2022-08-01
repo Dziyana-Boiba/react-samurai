@@ -50,6 +50,7 @@
   font-size: 15px;
   color: white;
   background-color: #af1e23;
+  cursor: pointer;
   transition: 0.4s;
   transition-property: background;
 }

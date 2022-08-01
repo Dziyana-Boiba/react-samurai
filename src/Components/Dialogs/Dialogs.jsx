@@ -4,7 +4,7 @@ import DialogItem from './DialogsItem/DialogsItem';
 import MessageItem from './MessagesItem/MessagesItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -24,11 +24,18 @@ const Dialogs = (props) => {
 
     let activeChat = (chatId) => {
         props.toggleActiveChat(chatId)
+        
     }
+
+    
+
+    let chatIdNum = state.activeChatId;
+    let activeChatInfo = state.dialogs.filter( d => d.id === chatIdNum);
+    let activeChatMessages = state.messages.filter( m => m.id === chatIdNum);
 
     let dialogElements = state.dialogs.map( d => <DialogItem name={d.name} id={d.id} img={d.img} activeChat={activeChat} isOnline={d.isOnline} active={d.active} activeTime={d.activeTime} />);
 
-    let messageElements = state.messages.map( m => <MessageItem message={m.message}/>)
+    
 
     return (
         <div className={st.dialogs}>
@@ -48,42 +55,62 @@ const Dialogs = (props) => {
 
 
                 <div className={st.chatContent}>
-                        <div  className={st.messageItems}>
+                    {chatIdNum 
+                    
+                        ? <div  className={st.messageItems}>
                             <div className={st.contentHeader}>
                                 <div className={st.currentUserChat}>
                                     <div className={st.avatar}>
-                                        <img src={props.img} alt=""></img>
-                                        <span className={props.isOnline ? st.isOnlineTrue : st.isOnline}></span>
+                                        
+                                        <img src={activeChatInfo[0].img} alt=""></img>
+                                        <span className={activeChatInfo[0].isOnline ? st.isOnlineTrue : st.isOnline}></span>
                                     </div>
                                     <div className={st.userInfo}>
-                                        {props.name}
-                                        <span className={st.activeTime}>{props.activeTime}</span>
+                                        {activeChatInfo[0].name}
+                                        <span className={st.activeTime}>{activeChatInfo[0].activeTime}</span>
                                     </div> 
                                 </div>
                                 
                             </div>
                             
                             <div className={st.contentBody}>
-                                <div>{messageElements}</div> 
+                                <div>
+                                    {activeChatMessages[0].chat.map( m => 
+                                        <MessageItem message={m.message} key={m.key} type={m.type} img={activeChatInfo[0].img}/>
+                                    )}
+                                </div> 
                             </div>
                             
                                      
                             <div className={st.contentFooter}>
-                                <div className={st.addFiles}>
-                                    <button>
-                                        <FontAwesomeIcon icon={faPlus} className={st.icon}/>
-                                    </button>
+                                <div className={st.sendMessage}>
+                                    <div className={st.addFiles}>
+                                        <button>
+                                            <FontAwesomeIcon icon={faPlus} className={st.iconAdd}/>
+                                        </button>
+                                    </div>
+                                    <div className={st.typeText}>
+                                        <textarea 
+                                            onChange={onMessageChange} 
+                                            value={state.newMessageText} 
+                                            placeholder="Type your message">
+                                        </textarea>
+                                    </div>
+                                    <div className={st.btnSend}>
+                                        <button onClick={onSendMessage}>
+                                            <FontAwesomeIcon icon={faPaperPlane} className={st.iconSend}/>
+                                            <span>Send</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div>
-                                    <textarea 
-                                        onChange={onMessageChange} 
-                                        value={state.newMessageText} 
-                                        placeholder="Type your message">
-                                    </textarea>
-                                </div>
-                                <div><button onClick={onSendMessage}>Send</button></div>
                             </div>
                         </div>
+
+                        : <div className={st.chooseChat}>
+                            <p>Please, choose the chat</p>
+                            </div>
+                        }
+                        
                 </div>
             </div>
            

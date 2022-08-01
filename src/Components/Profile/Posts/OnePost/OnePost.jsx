@@ -48,7 +48,7 @@ const OnePost = (props) => {
             <Comment
                 className={st.comment}
                 actions={actions}
-                author={<a>Samurai</a>}
+                author={"Samurai"}
                 avatar={<Avatar src={props.img} alt="" className={st.avatar} />}
                 content={<p>{props.message}</p>}
                 datetime={
