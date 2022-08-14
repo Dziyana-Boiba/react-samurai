@@ -3,8 +3,9 @@ import React from "react"
 import st from "./Users.module.css";
 import 'antd/dist/antd.css'
 import userPhoto from "../../assets/img/samurai-avatar.jpg"
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import { Pagination } from 'antd';
+
 
 
 
@@ -34,6 +35,7 @@ const Users = (props) => {
             props.onPageChanged(pageNumber)
         };
 
+        
         return (
         <div id="container" className={st.users}>
 
