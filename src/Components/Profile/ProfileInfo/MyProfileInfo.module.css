@@ -4,10 +4,32 @@
 
 .profileInfo {
   display: flex;
+  
   padding: 10px;
 }
+
+.profileTextInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .privetInfo {
   display: flex;
   flex-direction: row;
   padding: 10px;
+}
+
+.profileStatus{
+  display: flex;
+  
+}
+
+.profileStatusItem{
+  margin: 0 0 20px 0;
+}
+
+.profileStatus span{
+  display: block;
+  color: red;
 }

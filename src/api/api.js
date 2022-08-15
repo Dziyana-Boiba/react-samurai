@@ -31,15 +31,31 @@ export const usersAPI = {
             });
     },
     getUserData(userId){
+        return profileAPI.getUserData(userId);
+    }
+}
+
+export const profileAPI = {
+    
+    getUserData(userId){
         return instance.get(`profile/${userId}`)
             .then( response => {
                 return response.data
             })
+    },
+
+    getStatus(userId){
+        return instance.get(`profile/status/${userId}`)
+            
+    },
+
+    updateStatus(status){
+        return instance.put(`profile/status`, {status: status})
+            
     }
+
+
 }
-
-
-
 
 export const authAPI = {
     getMyData(){

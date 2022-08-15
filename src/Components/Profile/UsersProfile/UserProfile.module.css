@@ -1,5 +1,28 @@
-.userInfo {
+.userProfileInfo {
   margin: auto;
   height: 100vh;
+  
 }
 
+.userInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfo img{
+  width: 100px;
+}
+
+.privetInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.profileStatusItem{
+  margin: 0 0 20px 0;
+}
+
+.profileStatus span{
+  display: block;
+  color: red;
+}

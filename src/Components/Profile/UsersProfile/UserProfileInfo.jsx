@@ -1,5 +1,6 @@
-import Preloader from '../../common/Preloader/Preloader'
-import st from './UserProfile.module.css'
+import Preloader from '../../common/Preloader/Preloader';
+import st from './UserProfile.module.css';
+import ProfileStatus from '../ProfileInfo/ProfileStatus'
 
 const UserProfileInfo = (props) => {
 
@@ -8,15 +9,19 @@ const UserProfileInfo = (props) => {
     }
 
     return (
-        <div className={st.userInfo}>
+        <div className={st.userProfileInfo}>
             
-            
+            <div className={st.userInfo}>
                 <img src={props.profile.photos.small} alt=""></img>
                 <div className={st.privetInfo}>
-                    {props.profile.fullName}
-                    {props.profile.aboutMe}
+                    Name: {props.profile.fullName} <br/>
+                    About Me: {props.profile.aboutMe}
                 </div>
-            
+                <div className={st.profileStatusItem}>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+                </div>
+            </div>
+
         </div>
     )
 }
