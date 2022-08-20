@@ -1,5 +1,3 @@
-
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 const SEND_MESSAGE = "SEND_MESSAGE";
 const TOGGLE_ACTIVE = "TOGGLE_ACTIVE"
 
@@ -266,24 +264,18 @@ let initialState = {
          
     
     ],
-    activeChatId: null,
-    newMessageText: ""
+    activeChatId: null
+    
 }
 
 const dialogsReducer = (state = initialState, action) => {
     
     switch(action.type){
-        case UPDATE_NEW_MESSAGE_TEXT:
-            return {
-                ...state,
-                newMessageText: action.newText
-            };
-            
+        
         case SEND_MESSAGE:
-            let bodyMessage = state.newMessageText;
+            let bodyMessage = action.newMessageText;
             return {
                 ...state,
-                newMessageText: "",
                 messages: state.messages.map( (d) =>  {
                     if(d.id === state.activeChatId) {
                         let newChat = d.chat.concat({
@@ -316,18 +308,7 @@ const dialogsReducer = (state = initialState, action) => {
 }
 
 
-export const sendMessageActionCreator = () => ({type: SEND_MESSAGE})
-
-
-export const updateNewMessageActionCreator = (text) => {
-    return (
-        {
-            type: UPDATE_NEW_MESSAGE_TEXT,
-            newText: text
-        }
-    )
-}
-
+export const sendMessageActionCreator = (newMessageText) => ({type: SEND_MESSAGE, newMessageText})
 export const toggleActiveAC = (chatId) => ({type: TOGGLE_ACTIVE, chatId})
 
 export default dialogsReducer

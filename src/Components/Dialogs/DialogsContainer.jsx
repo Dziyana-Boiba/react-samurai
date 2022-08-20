@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux'
-import { updateNewMessageActionCreator, sendMessageActionCreator, toggleActiveAC } from '../../Redux/dialogs-reducer';
+import { sendMessageActionCreator, toggleActiveAC } from '../../Redux/dialogs-reducer';
 import Dialogs from './Dialogs';
 
 
@@ -12,11 +12,9 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return{
-        updateNewMessage: (text) => {
-            dispatch(updateNewMessageActionCreator(text))
-        },
-        sendMessage: () => {
-            dispatch(sendMessageActionCreator())
+        
+        sendMessage: (newMessageText) => {
+            dispatch(sendMessageActionCreator(newMessageText))
         },
         toggleActiveChat: (chatId) => {
             dispatch(toggleActiveAC(chatId))

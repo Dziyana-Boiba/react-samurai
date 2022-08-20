@@ -4,7 +4,9 @@ import DialogItem from './DialogsItem/DialogsItem';
 import MessageItem from './MessagesItem/MessagesItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faPlus, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
+import { Field, reduxForm } from 'redux-form';
 
 
 
@@ -12,15 +14,11 @@ import { faPlus, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 const Dialogs = (props) => {
 
     let state = props.dialogsPage
-   
-    let onSendMessage = () => {
-        props.sendMessage();
+ 
+    let submitNewMessage = (formMessageData) => {
+        props.sendMessage(formMessageData.newMessageText);
     }
 
-    let onMessageChange = (event) => {
-        let text = event.target.value;
-        props.updateNewMessage(text);
-    }
 
     let activeChat = (chatId) => {
         props.toggleActiveChat(chatId)
@@ -83,26 +81,7 @@ const Dialogs = (props) => {
                             
                                      
                             <div className={st.contentFooter}>
-                                <div className={st.sendMessage}>
-                                    <div className={st.addFiles}>
-                                        <button>
-                                            <FontAwesomeIcon icon={faPlus} className={st.iconAdd}/>
-                                        </button>
-                                    </div>
-                                    <div className={st.typeText}>
-                                        <textarea 
-                                            onChange={onMessageChange} 
-                                            value={state.newMessageText} 
-                                            placeholder="Type your message">
-                                        </textarea>
-                                    </div>
-                                    <div className={st.btnSend}>
-                                        <button onClick={onSendMessage}>
-                                            <FontAwesomeIcon icon={faPaperPlane} className={st.iconSend}/>
-                                            <span>Send</span>
-                                        </button>
-                                    </div>
-                                </div>
+                               <AddMessageReduxForm onSubmit={submitNewMessage}/> 
                             </div>
                         </div>
 
@@ -118,5 +97,35 @@ const Dialogs = (props) => {
         </div>
     );
 }
+
+
+
+const AddMessageForm = (props) => {
+  
+    return (
+        <form onSubmit={props.handleSubmit} className={st.sendMessage}>
+            <div className={st.addFiles}>
+                <button type="button">
+                    <FontAwesomeIcon icon={faPlus} className={st.iconAdd}/>
+                </button>
+            </div>
+            <div className={st.typeText}>
+                <Field component="textarea" name="newMessageText" placeholder="Type your message" />
+                    
+            </div>
+            <div className={st.btnSend}>
+                <button type="submit">
+                    <FontAwesomeIcon icon={faPaperPlane} className={st.iconSend}/>
+                    <span>Send</span>
+                </button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageReduxForm = reduxForm({
+    form: 'message'
+})(AddMessageForm)
+
 
 export default Dialogs

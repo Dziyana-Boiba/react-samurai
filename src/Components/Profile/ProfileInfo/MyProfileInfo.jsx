@@ -20,11 +20,7 @@ const MyProfileInfo = (props) => {
                     Web Site: <br />
 
                 </div>
-            </div>
-
-            
-            
-            
+            </div>   
         </div>
     )
 }

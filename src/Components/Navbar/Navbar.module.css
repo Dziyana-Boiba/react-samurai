@@ -134,6 +134,6 @@ input[type="checkbox"]:checked ~ .App .contentApp {
   left: -120px;
 }
 
-input[type="checkbox"]{
+.navbar input[type="checkbox"]{
   display: none;
 }
