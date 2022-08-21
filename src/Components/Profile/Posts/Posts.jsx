@@ -6,6 +6,7 @@ import { faPhotoVideo, faVideoCamera, faUserFriends } from '@fortawesome/free-so
 
 import { Button } from 'antd';
 import userPhoto from "../../../assets/img/samurai-avatar.jpg";
+import { Field, reduxForm } from 'redux-form'
 
 
 
@@ -13,16 +14,10 @@ const Posts = (props) => {
 
     let postElements = props.posts.map( p => <OnePost message={p.message} like={p.like} dislike={p.dislike} img={p.img}/> );
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
+    let addPostSubmit = (data) => {
+        props.addPost(data.newPostText);
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
 
     return (
         <div className={st.posts}>
@@ -36,38 +31,42 @@ const Posts = (props) => {
                     ></img>
                 </div>
                 <div className={st.main}>
-                    <form action='' method='POST'>
-                        <textarea 
-                            onChange={onPostChange}
-                            value={props.newPostText}
-                            ref={newPostElement}
-                            placeholder="What's on your mind?"
-                        >
-                        </textarea>
-                        
-                        <div className={st.icons}>
-                            <FontAwesomeIcon icon={faPhotoVideo} className={st.icon}/>
-                            <span>Photo</span>
-                            <FontAwesomeIcon icon={faVideoCamera} className={st.icon}/>
-                            <span>Live</span>
-                            <FontAwesomeIcon icon={faUserFriends} className={st.icon}/>
-                            <span>Tag Friends</span>
-                            <Button onClick={onAddPost} type="primary" shape="round"  size='small'>
-                                Add Post
-                            </Button>
-                        </div>
-                        
-                    </form>
+                    <AddPostReduxForm onSubmit={addPostSubmit}/>
                 </div>
             </div>
             
-            
-            
-
-
             {postElements}
         </div>
     )
 }
+
+
+const AddPostForm = (props) => {
+    return(
+        <form onSubmit={props.handleSubmit}>
+            <Field component={"textarea"} name={"newPostText"} placeholder={"What's on your mind?"} />
+                                   
+            <div className={st.icons}>
+                <FontAwesomeIcon icon={faPhotoVideo} className={st.icon}/>
+                 <span>Photo</span>
+                <FontAwesomeIcon icon={faVideoCamera} className={st.icon}/>
+                <span>Live</span>
+                <FontAwesomeIcon icon={faUserFriends} className={st.icon}/>
+                <span>Tag Friends</span>
+                <button type="submit" >
+                    Add Post
+                </button>
+            </div>
+                        
+        </form>
+    )
+}
+
+const AddPostReduxForm = reduxForm({
+    form: 'addPost'
+})(AddPostForm)
+
+
+
 
 export default Posts

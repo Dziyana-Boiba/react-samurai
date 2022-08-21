@@ -70,4 +70,7 @@ span{
     background-color: #af1e23;
     float: right;
     margin-right: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
 }
