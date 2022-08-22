@@ -1,0 +1,65 @@
+
+.formControl.error{
+    input, 
+    textarea {
+        border: 2px solid #af1e23;
+    } 
+} 
+
+.errorBlock{
+    margin-bottom: 20px;
+    padding: 0 10px; 
+
+    span{
+        background-color: #fff;
+        border-radius: 20px;
+        color: #af1e23;
+        font-weight: 600;
+        font-size: 14px;
+        border: 2px solid #2F323A;
+        padding-right: 10px;
+        .iconExcl{
+            border: none;
+            padding: 0 5px;
+        }
+    }
+}
+
+.inputFormControl{
+    display: flex;
+}
+
+
+.errorInputBlock{
+    margin-left: 10px;
+    span{
+        background-color: #fff;
+        border-radius: 5px;
+        color: #af1e23;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        border: 2px solid #2F323A;
+        padding: 0 10px 0 0;
+        .iconExcl{
+            border: none;
+            padding: 0 5px;
+        }
+    }
+
+       
+        position: relative;
+        &::before{
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            left: -5px;
+            margin: -7.5px 0 0 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid #2F323A;
+        }
+}
+

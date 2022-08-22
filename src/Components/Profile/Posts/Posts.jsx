@@ -4,11 +4,12 @@ import OnePost from './OnePost/OnePost'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhotoVideo, faVideoCamera, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
-import { Button } from 'antd';
 import userPhoto from "../../../assets/img/samurai-avatar.jpg";
 import { Field, reduxForm } from 'redux-form'
+import { maxLengthCreator, requiredField } from '../../../utils/validators'
+import { Textarea } from '../../common/FormsControls/FormsControls'
 
-
+const maxLength10 =  maxLengthCreator(10);
 
 const Posts = (props) => {
 
@@ -44,7 +45,8 @@ const Posts = (props) => {
 const AddPostForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
-            <Field component={"textarea"} name={"newPostText"} placeholder={"What's on your mind?"} />
+            <Field component={Textarea} name="newPostText" placeholder="What's on your mind?" 
+                validate={[requiredField, maxLength10]}/>
                                    
             <div className={st.icons}>
                 <FontAwesomeIcon icon={faPhotoVideo} className={st.icon}/>
