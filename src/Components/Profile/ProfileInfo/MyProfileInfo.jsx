@@ -1,7 +1,8 @@
 
 
 import st from './MyProfileInfo.module.css'
-import ProfileStatus from './ProfileStatus'
+//import ProfileStatus from './ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks'
 
 
 const MyProfileInfo = (props) => {
@@ -11,7 +12,7 @@ const MyProfileInfo = (props) => {
             <img src="https://img.freepik.com/free-vector/samurai-style-ink-carracter_293852-93.jpg?w=2000" alt=""></img>
             <div className={st.profileTextInfo}>
                 <div className={st.profileStatusItem}>
-                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+                    <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
                 </div>
                 <div className={st.privetInfo}>
                     Date of Birth: 1 january <br />

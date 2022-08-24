@@ -8,6 +8,9 @@
   position: fixed;
   height: 50px;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 .logo {
@@ -31,9 +34,21 @@
 
 
 .loginBlock{
-  float: right;
+  padding: 15px 0 0 0;
   
 }
+
+.loginUser{
+  display: flex;
+  align-items: center;
+}
+
+.loginUser span{
+  color: #fff;
+  margin: -5px 0 0 0;
+
+}
+
 
 .loginBlock a {
   color: white;
@@ -42,7 +57,7 @@
 .btn{
   text-decoration: none;
   padding: 5px;
-  float: right;
+  
   margin-top: -36px;
   border: none;
   margin-right: 20px;
